@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript" src="/js/management.js"></script>
+    <script type="text/javascript">
+        function changeOnclick(){
+            changeStudent(document.getElementById("studentId").value, document.getElementById("name").value, document.getElementById("department").value, document.getElementById("major").value);
+        }
+    </script>
+</head>
+<body>
+<div class="col-sm-12" style="text-align: center; margin-top: 300px">
+    <p>
+        <span style="font-size: xx-large">
+            修改学生信息
+        </span>
+    </p>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <label>
+        <input id = "studentId" type="text" name="studentId" style="font-size: x-large" placeholder="请输入11位学号" />
+    </label>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <label>
+        <input id = "name" type="text" name="name" style="font-size: x-large" placeholder="请输入姓名"/>
+    </label>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <label>
+        <input id = "department" type="text" name="department" style="font-size: x-large" placeholder="请输入院系" />
+    </label>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <label>
+        <input id = "major" type="text" name="major" style="font-size: x-large" placeholder="请输入专业" />
+    </label>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <button id="add" class="btn btn-default" type="button" onclick="changeOnclick()" style="font-size: x-large">修改学生信息</button>
+</div>
+</body>
+</html>

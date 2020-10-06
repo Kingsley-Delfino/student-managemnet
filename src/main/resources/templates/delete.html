@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript" src="/js/management.js"></script>
+    <script type="text/javascript">
+        function deleteOnclick(){
+            deleteStudent(document.getElementById("studentId").value);
+        }
+    </script>
+</head>
+<body>
+<div class="col-sm-12" style="text-align: center; margin-top: 300px">
+    <p>
+        <span style="font-size: xx-large">
+            删除学生信息
+        </span>
+    </p>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <label>
+        <input id = "studentId" type="text" name="studentId" style="font-size: x-large" placeholder="请输入11位学号" />
+    </label>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <button id="delete" class="btn btn-default" type="button" onclick="deleteOnclick()" style="font-size: x-large">删除学生信息</button>
+</div>
+</body>
+</html>

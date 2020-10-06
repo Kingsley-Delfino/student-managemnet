@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+    <style type="text/css">
+        #add,#show,#change,#delete {
+            font-size: x-large;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        function add_click(){
+            window.location.href = "/api/add";
+        }
+        function show_click(){
+            window.location.href = "/api/show";
+        }
+        function change_click(){
+            window.location.href = "/api/change";
+        }
+        function delete_click(){
+            window.location.href = "/api/delete";
+        }
+    </script>
+</head>
+<body>
+<div class="col-sm-12" style="text-align: center; margin-top: 300px">
+    <p>
+        <span style="font-size: xx-large">
+            欢迎来到
+        </span>
+    </p>
+    <p>
+        <span style="font-size: xx-large">
+            学生信息管理系统
+        </span>
+    </p>
+</div>
+<div class="col-sm-12" style="text-align: center; margin-top: 50px">
+    <button id="add" class="btn btn-default" type="button" onclick="add_click()">添加学生信息</button>
+    <button id="show" class="btn btn-default" type="button" onclick="show_click()">查看学生信息</button>
+    <button id="change" class="btn btn-default" type="button" onclick="change_click()">修改学生信息</button>
+    <button id="delete" class="btn btn-default" type="button" onclick="delete_click()">删除学生信息</button>
+</div>
+</body>
+</html>
