@@ -3,6 +3,7 @@
 ### 一、学生信息管理系统简介
 
 ####1、添加学生
+
 URL Path：/api/vi/student
 
 Http Method：POST
@@ -55,6 +56,7 @@ docker默认的下载镜像源为国外官方源，下载速度较慢，可改�
 
 注：本方法仅适用于服务器上的systemd系统
 
+![Image text](https://codeup.aliyun.com/5f66233b5fd102f22f6bf80d/student-management/blob/master/src/main/resources/static/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201007151928.png)
 ####3、
 ####一、学生信息管理系统设置了前端页面
 
