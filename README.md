@@ -1,37 +1,60 @@
-### 3 分钟了解如何进入开发
+## 张纪跃-20212010070-课程实践02
 
-欢迎使用云效 Codeup，通过阅读以下内容，你可以快速熟悉 Codeup ，并立即开始今天的工作。
+### 一、学生信息管理系统简介
 
-### 提交**文件**
+####1、添加学生
+URL Path：/api/vi/student
 
-首先，你需要了解在 Codeup 中如何提交代码文件，跟着文档「[__提交第一行代码__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e7546fd9001aee81fd)」一起操作试试看吧。
+Http Method：POST
 
-### 开启扫描
+功能描述：在Request Body中以json的格式发送学生的具体信息，以向系统中添加学生，其中信息包括：学号（studentId）、姓名（name）、院系（department）和专业（major）。
 
-开发过程中，为了更好的管理你的代码资产，Codeup 内置了「[__代码规约扫描__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e8546fd9001aee821c)」和「[__敏感信息检测__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e8546fd9001aee821b)」服务，你可以在代码库设置-集成与服务中一键开启，开启后提交或合并请求的变更将自动触发扫描，并及时提供结果反馈。
+响应结果：若学号发生重复，则添加失败。
 
-![](https://img.alicdn.com/tfs/TB1nRDatoz1gK0jSZLeXXb9kVXa-1122-380.png "")
+####2、查看学生
 
-![](https://img.alicdn.com/tfs/TB1PrPatXY7gK0jSZKzXXaikpXa-1122-709.png "")
+URL Path：/api/vi/student
 
-### 代码评审
+Http Method：GET
 
-功能开发完毕后，通常你需要发起「[__代码合并和评审__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e8546fd9001aee8216)」，Codeup 支持多人协作的代码评审服务，你可以通过「[__保护分支__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e9546fd9001aee8221)」策略及「[__合并请求设置__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e9546fd9001aee8224)」对合并过程进行流程化管控，同时提供 WebIDE 在线代码评审及冲突解决能力，让你的评审过程更加流畅。
+功能描述：用List格式，返回当前系统中的所有学生信息。
 
-![](https://img.alicdn.com/tfs/TB1XHrctkP2gK0jSZPxXXacQpXa-1432-887.png "")
+####3、修改学生信息
 
-![](https://img.alicdn.com/tfs/TB1V3fctoY1gK0jSZFMXXaWcVXa-1432-600.png "")
+URL Path：/api/vi/student
 
-### 编写文档
+Http Method：PUT
 
-项目推进过程中，你的经验和感悟可以直接记录到 Codeup 代码库的「[__文档__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e8546fd9001aee8213)」内，让智慧可视化。
+功能描述：用json格式，修改系统中某位学生的具体信息（以学号为学生判断依据，学号相同视为同一学生）。
 
-![](https://img.alicdn.com/tfs/TB1BN2ateT2gK0jSZFvXXXnFXXa-1432-700.png "")
+响应结果：若学号不存在，则修改失败。
 
-### 成员协作
+####4、删除学生信息
 
-是时候邀请成员一起编写卓越的代码工程了，请点击右上角「成员」邀请你的小伙伴开始协作吧！
+URL Path：/api/vi/student
 
-### 更多
+Http Method：DELETE
 
-Git 使用教学、高级功能指引等更多说明，参见[__Codeup帮助文档__](https://thoughts.aliyun.com/sharespace/5e8c37eb546fd9001aee8242/docs/5e8c37e6546fd9001aee81fa)。
+功能描述：用json格式，删除系统中某位学生。
+
+响应结果：若学号不存在，则删除失败。
+
+###二、项目容器化
+
+####1、生成jar包
+
+通过Maven将项目打包为jar包，并更名为：student-management.jar
+
+####2、修改docker镜像源
+
+docker默认的下载镜像源为国外官方源，下载速度较慢，可改为国内的镜像源进行加速，避免进程因速度过慢而被终止。
+
+本处采用了阿里云的镜像源，阿里云镜像获取地址：https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+
+登陆后在左侧菜单栏中选择“镜像加速器”即可看到自己的专属地址，复制该地址，进入服务器的/etc/docker目录下，打开daemon.json文件（没有则新建），将地址以如下形式填写进去：{"registry-mirrors":["复制的地址"]}
+
+注：本方法仅适用于服务器上的systemd系统
+
+####3、
+####一、学生信息管理系统设置了前端页面
+
