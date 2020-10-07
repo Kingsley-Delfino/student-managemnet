@@ -102,7 +102,7 @@ docker默认的下载镜像源为国外官方源，下载速度较慢，可改�
 
 ###1、访问页面
 
-在本地浏览器中输入地址：10.176.34.83：8010
+在本地浏览器中输入地址：10.176.34.83:8010
 
 ![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007172202.png)
 
