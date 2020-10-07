@@ -8,7 +8,7 @@ URL Path：/api/vi/student
 
 Http Method：POST
 
-功能描述：在Request Body中以json的格式发送学生的具体信息，以向系统中添加学生，其中信息包括：学号（studentId）、姓名（name）、院系（department）和专业（major）。
+功能描述：在Request Body中以json的格式发送学生的具体信息，以向系统中添加学生，其中学生信息包括：学号（studentId）、姓名（name）、院系（department）和专业（major）。
 
 响应结果：若学号发生重复，则添加失败。
 
