@@ -1,13 +1,9 @@
-FROM registry.cn-hangzhou.aliyuncs.com/devcloud_base_image/openjdk:8
+FROM java:8-jre
 
-ARG APP_NAME
-ENV APP_NAME=${APP_NAME}
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
-COPY ./target/${APP_NAME}.jar /home/admin/${APP_NAME}.jar
-COPY ./start.sh /home/admin/start.sh
+ADD student-management.jar /app/
 
-RUN chmod +x /home/admin/*.sh
+CMD ["java", "-Xmx200m", "-jar", "/app/student-management.jar"]
 
-WORKDIR /home/admin
-
-ENTRYPOINT ["/home/admin/start.sh"]
+EXPOSE 8080
