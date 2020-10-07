@@ -54,7 +54,7 @@ docker默认的下载镜像源为国外官方源，下载速度较慢，可改�
 
 登陆后在左侧菜单栏中选择“镜像加速器”即可看到自己的专属地址，复制该地址，进入服务器的/etc/docker目录下，打开daemon.json文件（没有则新建），将地址以如下形式填写进去：{"registry-mirrors":["复制的地址"]}
 
-![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201007151928.png)
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007151928.png)
 
 注：本方法仅适用于服务器上的systemd系统
 
@@ -62,41 +62,41 @@ docker默认的下载镜像源为国外官方源，下载速度较慢，可改�
 
 新建文件，名为Dockerfile，无后缀名，内容如下
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007162627.png)
 
 将Dockerfile文件与第一步生成的student-management.jar放在同一目录下。
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007165549.png)
 
 ###4、启动docker
 
 在该目录下打开终端，注意管理员权限
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007165252.png)
 
 重新启动docker的命令为：systemctl restart docker
 
 因为第二步中更改了daemon.json文件，所以在启动docker之前需要先重新加载daemon.json文件，输入命令为：systemctl daemon-reload
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007165403.png)
 
 ###5、生成docker镜像
 
 输入命令：docker build -t student-management.jar:0.0.1 .
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007165457.png)
 
 ###6、查看镜像
 
 输入命令：docker images
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007171735.png)
 
 ###7、运行镜像
 
 输入命令：docker run -p 8010:8080 student-management.jar:0.0.1
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007171942.png)
 
 ##三、程序运行
 
@@ -104,52 +104,52 @@ docker默认的下载镜像源为国外官方源，下载速度较慢，可改�
 
 在本地浏览器中输入地址：10.176.34.83：8010
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007172202.png)
 
 ###2、添加学生信息
 
 点击“添加学生信息”按钮，页面跳转到“添加”页面
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007175149.png)
 
 填入学生信息，点击“添加学生信息”按钮，页面通过URL：“/api/vi/student“向系统中添加该位学生，页面伴随有”添加成功！“或”添加失败！“的提示框。
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007172920.png)
 
 可在”查看“页面检查添加结果
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007173002.png)
 
 ###3、查看学生信息
 
 点击“查看学生信息”按钮，页面跳转到“查看”页面，页面通过URL：“/api/vi/student“列出当前系统内所有学生的信息
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007173002.png)
 
 ###4、修改学生信息
 
 点击“修改学生信息”按钮，页面跳转到“修改”页面
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007174046.png)
 
 填入需要修改的学生的学号，并填入更新的学生信息，点击“修改学生信息”按钮，页面通过URL：“/api/vi/student“对系统中的该位学生进行信息修改，页面伴随有”修改成功！“或”修改失败！“的提示框。
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007174117.png)
 
 可在”查看“页面检查修改结果
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007174136.png)
 
 ###5、删除学生信息
 
 点击“删除学生信息”按钮，页面跳转到“删除”页面
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007174154.png)
 
 填入需要删除的学生的学号，点击“删除学生信息”按钮，页面通过URL：“/api/vi/student“对系统中的该位学生进行删除，页面伴随有”删除成功！“或”删除失败！“的提示框。
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007175616.png)
 
 可在”查看“页面检查删除结果
 
-![Image text]()
+![Image text](https://raw.githubusercontent.com/Kingsley-Delfino/student-managemnet/master/src/main/resources/static/img/20201007174233.png)
